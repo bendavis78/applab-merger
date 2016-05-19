@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>App Lab Merger</title>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+  </head>
+  <body>
+    <h3>App Lab Merger</h3>
+    <div id="start">
+      <p>
+        Select a project and screen id to copy into your current project.
+      </p>
+        <select id="projectId">
+          <option disabled value="">Select project:</option>
+        </select>
+      </p>
+      <p id="selectScreen" class="hidden">
+        <select id="screenId">
+          <option disabled value="">Select screen:</option>
+        </select>
+      </p>
+      <p id="merge" class="hidden">
+        <em>WARNING: This will overwrite the screen with the same ID in your project.</em>
+        <button id="mergeBtn">Copy</button>
+      </p>
+    </div>
+    <div id="copying" class="hidden">
+      Copying...
+    </div>
+    <div id="result" class="hidden">
+      Done!
+    </div>
+  </body>
+</html>
