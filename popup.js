@@ -85,7 +85,7 @@ function getProject(projectId, cb) {
 function updateProject(projectId, data, cb) {
   var url = 'https://studio.code.org/v3/sources/' + projectId + '/main.json';
   var body = JSON.stringify(data);
-  
+
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -144,7 +144,7 @@ function merge() {
         var copyHtml = document.createElement('html');
         copyHtml.innerHTML = copyProject.html;
         var copyScreen = copyHtml.querySelector('#' + screenId);
-        
+
         if (currentScreen) {
           container.replaceChild(copyScreen, currentScreen)
         } else {
@@ -157,7 +157,9 @@ function merge() {
           $('#copying').style.display = 'none';
           $('#result').style.display = 'block';
           getTab(function(tab) {
-            //chrome.tabs.reload(tab.id);
+            setTimeout(function() {
+              chrome.tabs.reload(tab.id);
+            }, 1000);
           })
         });
       });
